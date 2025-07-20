@@ -2275,35 +2275,46 @@
             }
         }
 
-        // Legal Modal Management
+        // Legal Modal Management - Ensure it loads properly
         document.addEventListener('DOMContentLoaded', function() {
             const legalModal = document.getElementById('legalModal');
             const acceptBtn = document.getElementById('acceptTerms');
             const body = document.body;
+            
+            // Force modal to be visible immediately
+            if (legalModal) {
+                legalModal.style.display = 'flex';
+                legalModal.style.opacity = '1';
+                legalModal.style.zIndex = '999999';
+            }
             
             // Prevent scrolling when modal is open
             body.style.overflow = 'hidden';
             
             // Prevent closing modal with escape key or clicking outside
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    e.preventDefault();
-                    showWarningMessage();
+                if (legalModal && legalModal.style.display !== 'none') {
+                    if (e.key === 'Escape') {
+                        e.preventDefault();
+                        showWarningMessage();
+                    }
                 }
             });
             
             // Prevent right-click context menu on modal
-            legalModal.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                showWarningMessage();
-            });
-            
-            // Prevent clicking outside modal to close
-            legalModal.addEventListener('click', function(e) {
-                if (e.target === legalModal) {
+            if (legalModal) {
+                legalModal.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
                     showWarningMessage();
-                }
-            });
+                });
+                
+                // Prevent clicking outside modal to close
+                legalModal.addEventListener('click', function(e) {
+                    if (e.target === legalModal) {
+                        showWarningMessage();
+                    }
+                });
+            }
             
             // Warning message for attempts to bypass
             function showWarningMessage() {
@@ -2316,17 +2327,20 @@
                     color: white;
                     padding: 1rem 1.5rem;
                     border-radius: 10px;
-                    z-index: 999999;
+                    z-index: 9999999;
                     font-weight: 600;
                     box-shadow: 0 10px 25px rgba(220, 38, 38, 0.5);
                     animation: shake 0.5s ease-in-out;
+                    font-family: 'Poppins', sans-serif;
                 `;
                 warningDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> DEBE ACEPTAR LOS TÉRMINOS PARA CONTINUAR';
                 
                 document.body.appendChild(warningDiv);
                 
                 setTimeout(() => {
-                    warningDiv.remove();
+                    if (warningDiv.parentNode) {
+                        warningDiv.remove();
+                    }
                 }, 3000);
             }
             
@@ -2343,29 +2357,33 @@
             document.head.appendChild(shakeStyle);
             
             // Handle acceptance
-            acceptBtn.addEventListener('click', function() {
-                // Add acceptance animation
-                acceptBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESANDO ACEPTACIÓN...';
-                acceptBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-                
-                setTimeout(() => {
-                    acceptBtn.innerHTML = '<i class="fas fa-check-circle"></i> TÉRMINOS ACEPTADOS';
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    // Add acceptance animation
+                    acceptBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESANDO ACEPTACIÓN...';
+                    acceptBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
                     
                     setTimeout(() => {
-                        // Fade out modal
-                        legalModal.style.animation = 'modalFadeOut 0.5s ease-in';
+                        acceptBtn.innerHTML = '<i class="fas fa-check-circle"></i> TÉRMINOS ACEPTADOS';
                         
                         setTimeout(() => {
-                            legalModal.style.display = 'none';
-                            body.style.overflow = 'auto'; // Restore scrolling
-                            
-                            // Show acceptance confirmation
-                            showAcceptanceConfirmation();
-                            
-                        }, 500);
-                    }, 1000);
-                }, 1500);
-            });
+                            // Fade out modal
+                            if (legalModal) {
+                                legalModal.style.animation = 'modalFadeOut 0.5s ease-in';
+                                
+                                setTimeout(() => {
+                                    legalModal.style.display = 'none';
+                                    body.style.overflow = 'auto'; // Restore scrolling
+                                    
+                                    // Show acceptance confirmation
+                                    showAcceptanceConfirmation();
+                                    
+                                }, 500);
+                            }
+                        }, 1000);
+                    }, 1500);
+                });
+            }
             
             function showAcceptanceConfirmation() {
                 const confirmationDiv = document.createElement('div');
@@ -2378,10 +2396,11 @@
                     color: white;
                     padding: 2rem;
                     border-radius: 15px;
-                    z-index: 99999;
+                    z-index: 9999999;
                     text-align: center;
                     box-shadow: 0 15px 35px rgba(16, 185, 129, 0.3);
                     animation: confirmationFadeIn 0.5s ease-out;
+                    font-family: 'Poppins', sans-serif;
                 `;
                 confirmationDiv.innerHTML = `
                     <i class="fas fa-shield-check" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
@@ -2405,7 +2424,9 @@
                 setTimeout(() => {
                     confirmationDiv.style.animation = 'confirmationFadeIn 0.5s ease-out reverse';
                     setTimeout(() => {
-                        confirmationDiv.remove();
+                        if (confirmationDiv.parentNode) {
+                            confirmationDiv.remove();
+                        }
                     }, 500);
                 }, 2500);
             }
@@ -2424,7 +2445,7 @@
             // Disable browser back button while modal is open
             history.pushState(null, null, location.href);
             window.addEventListener('popstate', function() {
-                if (legalModal.style.display !== 'none') {
+                if (legalModal && legalModal.style.display !== 'none') {
                     history.pushState(null, null, location.href);
                     showWarningMessage();
                 }
@@ -2432,7 +2453,7 @@
             
             // Disable common keyboard shortcuts
             document.addEventListener('keydown', function(e) {
-                if (legalModal.style.display !== 'none') {
+                if (legalModal && legalModal.style.display !== 'none') {
                     // Disable F12, Ctrl+Shift+I, Ctrl+U, etc.
                     if (e.key === 'F12' || 
                         (e.ctrlKey && e.shiftKey && e.key === 'I') ||
@@ -2442,6 +2463,20 @@
                         showWarningMessage();
                     }
                 }
+            });
+            
+            // Force modal to stay visible until accepted
+            const modalCheck = setInterval(() => {
+                if (legalModal && legalModal.style.display === 'none' && body.style.overflow !== 'auto') {
+                    legalModal.style.display = 'flex';
+                    body.style.overflow = 'hidden';
+                    showWarningMessage();
+                }
+            }, 1000);
+            
+            // Clear interval when modal is properly closed
+            window.addEventListener('beforeunload', () => {
+                clearInterval(modalCheck);
             });
         });
 
