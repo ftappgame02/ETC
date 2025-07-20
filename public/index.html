@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETCSA Ingeniería | Líderes en Ingeniería Civil y Ambiental</title>
+    <meta name="description" content="30+ años de experiencia en interventoría, consultoría y construcción de obras civiles. Especialistas en agua potable, saneamiento y tecnología sin zanja.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #10b981 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            font-size: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .highlight {
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            color: white;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-card:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-card:nth-child(2) {
+            top: 50%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-card:nth-child(3) {
+            bottom: 10%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .stats-card {
+            text-align: center;
+        }
+
+        .stats-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stats-card .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .service-features li i {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .achievement {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .achievement .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .achievement .label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 400px;
+            background: var(--gradient);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.2)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background: var(--bg-light);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><path d="M0 0h200v200H0z" fill="rgba(255,255,255,0.1)"/><path d="M20 20h40v40H20zM80 20h40v40H80zM140 20h40v40h-40zM20 80h40v40H20zM80 80h40v40H80zM140 80h40v40h-40zM20 140h40v40H20zM80 140h40v40H80zM140 140h40v40h-40z" fill="rgba(255,255,255,0.05)"/></svg>');
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .portfolio-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            color: var(--text-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-size: 1.125rem;
+        }
+
+        .contact-details {
+            space-y: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: inherit;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gradient);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Map Section */
+        .map-section {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .google-map {
+            width: 100%;
+            height: 100%;
+            filter: grayscale(0%) contrast(1.1) brightness(1.1);
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 350px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .map-info h3 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .map-info h3 i {
+            color: var(--primary-color);
+        }
+
+        .map-info p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .map-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .map-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .map-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .map-btn i {
+            font-size: 1rem;
+        }
+
+        /* Map responsive */
+        @media (max-width: 768px) {
+            .map-section {
+                height: 500px;
+            }
+
+            .map-overlay {
+                position: static;
+                margin: 1rem;
+                max-width: none;
+                margin-bottom: 0;
+            }
+
+            .map-container {
+                flex-direction: column;
+            }
+
+            .google-map {
+                height: 400px;
+            }
+
+            .map-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .map-btn {
+                flex: 1;
+                min-width: 120px;
+                font-size: 0.8rem;
+                padding: 0.6rem 0.8rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            /* Map responsive adjustments */
+            .map-section {
+                height: auto;
+                min-height: 500px;
+            }
+
+            .map-overlay {
+                position: relative;
+                margin: 1rem;
+                max-width: none;
+                order: 1;
+            }
+
+            .google-map {
+                order: 2;
+                height: 400px;
+                margin: 0 1rem 1rem;
+                border-radius: 15px;
+            }
+
+            .map-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .map-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .map-btn {
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .contact-item {
+                align-items: flex-start;
+            }
+
+            .contact-item i {
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .service-card,
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            /* Smaller mobile map adjustments */
+            .map-overlay {
+                margin: 0.5rem;
+                padding: 1.5rem;
+            }
+
+            .google-map {
+                height: 300px;
+                margin: 0 0.5rem 0.5rem;
+            }
+
+            .map-info h3 {
+                font-size: 1.25rem;
+            }
+
+            .map-btn {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.6rem;
+                min-width: 90px;
+            }
+
+            .floating-card {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .floating-card .number {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform-origin: 0%;
+            transform: scaleX(0);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-building"></i>
+                ETCSA
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#contacto" class="cta-button">Solicitar Cotización</a>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Construyendo el <span class="highlight">Futuro</span> de Colombia</h1>
+                <p>Con más de 30 años de experiencia, somos líderes en ingeniería civil, sanitaria y ambiental. Transformamos ideas en realidades que mejoran la calidad de vida de las comunidades.</p>
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Nuestros Servicios
+                    </a>
+                    <a href="#proyectos" class="btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Ver Proyectos
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card stats-card">
+                    <span class="number">30+</span>
+                    <span class="label">Años de Experiencia</span>
+                </div>
+                <div class="floating-card stats-card">
+                    <span class="number">150+</span>
+                    <span class="label">Proyectos Ejecutados</span>
+                </div>
+                <div class="floating-card stats-card">
+                    <span class="number">$120B</span>
+                    <span class="label">Pesos Ejecutados</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Nuestros Servicios Especializados</h2>
+                <p>Ofrecemos soluciones integrales en ingeniería con los más altos estándares de calidad y tecnología de vanguardia</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Interventoría</h3>
+                    <p>Control técnico, administrativo y financiero de proyectos de construcción con los más altos estándares de calidad.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Supervisión técnica especializada</li>
+                        <li><i class="fas fa-check"></i> Control de calidad integral</li>
+                        <li><i class="fas fa-check"></i> Gestión de cronogramas</li>
+                        <li><i class="fas fa-check"></i> Informes especializados</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Consultoría en Ingeniería</h3>
+                    <p>Estudios, diseños y consultorías especializadas en ingeniería civil, sanitaria y ambiental.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Estudios de factibilidad</li>
+                        <li><i class="fas fa-check"></i> Diseños hidro-sanitarios</li>
+                        <li><i class="fas fa-check"></i> Evaluación ambiental</li>
+                        <li><i class="fas fa-check"></i> Modelación hidráulica</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construcción</h3>
+                    <p>Ejecución de obras civiles con tecnología avanzada y cumplimiento de especificaciones técnicas.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Obras de infraestructura</li>
+                        <li><i class="fas fa-check"></i> Sistemas de tratamiento</li>
+                        <li><i class="fas fa-check"></i> Redes de acueducto</li>
+                        <li><i class="fas fa-check"></i> Plantas de tratamiento</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Tecnología Sin Zanja</h3>
+                    <p>Especialistas en técnicas no destructivas: Pipe Jacking, CIPP y Ramming para infraestructura urbana.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Pipe Jacking</li>
+                        <li><i class="fas fa-check"></i> CIPP (Rehabilitación)</li>
+                        <li><i class="fas fa-check"></i> Perforación dirigida</li>
+                        <li><i class="fas fa-check"></i> Mínimo impacto urbano</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Gerencia de Proyectos</h3>
+                    <p>Gestión integral de proyectos desde la concepción hasta la entrega, garantizando éxito en tiempo y presupuesto.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Planificación estratégica</li>
+                        <li><i class="fas fa-check"></i> Control de costos</li>
+                        <li><i class="fas fa-check"></i> Gestión de riesgos</li>
+                        <li><i class="fas fa-check"></i> Coordinación multidisciplinaria</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Ingeniería Ambiental</h3>
+                    <p>Soluciones sostenibles para el manejo ambiental y cumplimiento de normativas vigentes.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Estudios de impacto ambiental</li>
+                        <li><i class="fas fa-check"></i> Planes de manejo ambiental</li>
+                        <li><i class="fas fa-check"></i> Monitoreo y seguimiento</li>
+                        <li><i class="fas fa-check"></i> Licenciamiento ambiental</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-content fade-in">
+                    <h2>30 Años Construyendo Confianza</h2>
+                    <p>Desde 1988, ETCSA Ingeniería se ha consolidado como una empresa líder en el sector de la ingeniería civil, sanitaria y ambiental en Colombia. Nuestro compromiso inquebrantable con la excelencia y la innovación nos ha permitido participar en más de 150 proyectos que han transformado comunidades a lo largo del país.</p>
+                    <p>Especializados en tecnologías de vanguardia como Pipe Jacking, CIPP y Ramming, somos pioneros en técnicas no destructivas que minimizan el impacto urbano mientras maximizamos la eficiencia de la infraestructura.</p>
+                    <div class="achievements">
+                        <div class="achievement">
+                            <span class="number">30+</span>
+                            <span class="label">Años de Experiencia</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="number">150+</span>
+                            <span class="label">Proyectos Ejecutados</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="number">$120B</span>
+                            <span class="label">Pesos Ejecutados</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="number">100%</span>
+                            <span class="label">Satisfacción Cliente</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual fade-in">
+                    <!-- Visual representation of the company -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="proyectos">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Proyectos Destacados</h2>
+                <p>Conoce algunos de nuestros proyectos más emblemáticos que han contribuido al desarrollo de infraestructura en Colombia</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <h3>Planta de Tratamiento de Agua Potable</h3>
+                        <p>Diseño y construcción de planta de tratamiento con capacidad para 50,000 habitantes, implementando tecnología de última generación.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Agua Potable</span>
+                            <span class="tag">Diseño</span>
+                            <span class="tag">Construcción</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <h3>Red de Alcantarillado Sin Zanja</h3>
+                        <p>Implementación de tecnología Pipe Jacking para instalación de 2km de alcantarillado sin interrumpir el tráfico urbano.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Pipe Jacking</span>
+                            <span class="tag">Alcantarillado</span>
+                            <span class="tag">Innovación</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <h3>Interventoría Vial Nacional</h3>
+                        <p>Supervisión técnica de obras viales en carreteras nacionales, garantizando cumplimiento de especificaciones INVIAS.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Interventoría</span>
+                            <span class="tag">Vial</span>
+                            <span class="tag">INVIAS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <h3>Sistema de Tratamiento de Aguas Residuales</h3>
+                        <p>Consultoría y diseño de PTAR para municipio de 30,000 habitantes con tecnología de tratamiento biológico avanzado.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">PTAR</span>
+                            <span class="tag">Consultoría</span>
+                            <span class="tag">Ambiental</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <h3>Rehabilitación de Redes con CIPP</h3>
+                        <p>Proyecto de rehabilitación de 5km de redes de acueducto utilizando tecnología CIPP, extendiendo vida útil 50 años.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">CIPP</span>
+                            <span class="tag">Rehabilitación</span>
+                            <span class="tag">Acueducto</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-content">
+                        <h3>Gerencia Integral de Megaproyecto</h3>
+                        <p>Gerencia de proyecto de infraestructura de saneamiento básico valorado en $15,000 millones de pesos.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Gerencia</span>
+                            <span class="tag">Megaproyecto</span>
+                            <span class="tag">Saneamiento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header fade-in" style="color: white; margin-bottom: 3rem;">
+                <h2>¿Listo para tu Próximo Proyecto?</h2>
+                <p>Contáctanos hoy mismo y descubre cómo podemos transformar tu visión en realidad</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación Principal</h4>
+                                <p>Chía, Cundinamarca, Colombia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+57 (1) 234-5678</p>
+                                <p>+57 (300) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@etcsasingenieria.com</p>
+                                <p>gerencia@etcsasingenieria.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horario de Atención</h4>
+                                <p>Lun - Vie: 8:00 AM - 6:00 PM</p>
+                                <p>Sáb: 8:00 AM - 12:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Certificaciones</h4>
+                                <p>ISO 9001:2015</p>
+                                <p>HSEQ Certificado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de Interés</label>
+                            <select id="service" name="service" style="width: 100%; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white; font-family: inherit;">
+                                <option value="">Selecciona un servicio</option>
+                                <option value="interventoria">Interventoría</option>
+                                <option value="consultoria">Consultoría</option>
+                                <option value="construccion">Construcción</option>
+                                <option value="tecnologia-sin-zanja">Tecnología Sin Zanja</option>
+                                <option value="gerencia">Gerencia de Proyectos</option>
+                                <option value="ambiental">Ingeniería Ambiental</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-overlay">
+                <div class="map-info">
+                    <h3><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación</h3>
+                    <p>Nos encontramos estratégicamente ubicados en Chía, Cundinamarca, desde donde atendemos proyectos a nivel nacional.</p>
+                    <div class="map-actions">
+                        <button class="map-btn" onclick="centerMap()">
+                            <i class="fas fa-crosshairs"></i> Centrar Mapa
+                        </button>
+                        <button class="map-btn" onclick="toggle3D()">
+                            <i class="fas fa-cube"></i> Vista 3D
+                        </button>
+                        <button class="map-btn" onclick="getDirections()">
+                            <i class="fas fa-route"></i> Cómo Llegar
+                        </button>
+                    </div>
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(249, 115, 22, 0.1); border-radius: 8px; border-left: 4px solid #f97316;">
+                        <p style="margin: 0; font-size: 0.8rem; color: #ea580c;">
+                            <i class="fas fa-info-circle"></i> <strong>Nota:</strong> Para usar todas las funciones del mapa, configura tu API key de Google Maps en el código.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="map" class="google-map"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ETCSA Ingeniería</h3>
+                    <p>Construyendo el futuro de Colombia con más de 30 años de experiencia en ingeniería civil, sanitaria y ambiental.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#servicios">Interventoría</a></li>
+                        <li><a href="#servicios">Consultoría en Ingeniería</a></li>
+                        <li><a href="#servicios">Construcción</a></li>
+                        <li><a href="#servicios">Tecnología Sin Zanja</a></li>
+                        <li><a href="#servicios">Gerencia de Proyectos</a></li>
+                        <li><a href="#servicios">Ingeniería Ambiental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Sectores</h3>
+                    <ul>
+                        <li><a href="#">Agua Potable</a></li>
+                        <li><a href="#">Saneamiento Básico</a></li>
+                        <li><a href="#">Infraestructura Vial</a></li>
+                        <li><a href="#">Medio Ambiente</a></li>
+                        <li><a href="#">Tratamiento de Aguas</a></li>
+                        <li><a href="#">Obras Civiles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
+                        <li><i class="fas fa-phone"></i> +57 (1) 234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@etcsasingenieria.com</li>
+                        <li><i class="fas fa-clock"></i> Lun - Vie: 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ETCSA Ingeniería S.A.S. Todos los derechos reservados. | Política de Privacidad | Términos de Servicio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&v=3.55" async defer></script>
+    
+    <script>
+        let map;
+        let is3D = false;
+        let marker;
+
+        // Initialize Google Maps
+        function initMap() {
+            try {
+                // Coordenadas de Chía, Cundinamarca
+                const etcsaLocation = { lat: 4.8584, lng: -74.0542 };
+
+                map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 17,
+                    center: etcsaLocation,
+                    mapTypeId: google.maps.MapTypeId.SATELLITE,
+                    tilt: 45, // Vista 3D activada por defecto
+                    heading: 90,
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                        mapTypeIds: [
+                            google.maps.MapTypeId.ROADMAP,
+                            google.maps.MapTypeId.SATELLITE,
+                            google.maps.MapTypeId.HYBRID,
+                            google.maps.MapTypeId.TERRAIN
+                        ]
+                    },
+                    streetViewControl: true,
+                    fullscreenControl: true,
+                    zoomControl: true,
+                    styles: [
+                        {
+                            featureType: "poi",
+                            elementType: "labels",
+                            stylers: [{ visibility: "off" }]
+                        }
+                    ]
+                });
+
+                // Marcador con icono personalizado más simple
+                const customIcon = {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 15,
+                    fillColor: '#1e40af',
+                    fillOpacity: 1,
+                    strokeColor: '#ffffff',
+                    strokeWeight: 3,
+                    strokeOpacity: 1
+                };
+
+                marker = new google.maps.Marker({
+                    position: etcsaLocation,
+                    map: map,
+                    icon: customIcon,
+                    title: 'ETCSA Ingeniería S.A.S.',
+                    animation: google.maps.Animation.DROP
+                });
+
+                // Info Window con información de la empresa
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <div style="padding: 15px; max-width: 300px; font-family: 'Poppins', sans-serif;">
+                            <h3 style="margin: 0 0 10px 0; color: #1e40af; font-size: 18px; font-weight: 600;">
+                                🏢 ETCSA Ingeniería S.A.S.
+                            </h3>
+                            <p style="margin: 8px 0; color: #6b7280; line-height: 1.5;">
+                                📍 Chía, Cundinamarca, Colombia
+                            </p>
+                            <p style="margin: 8px 0; color: #6b7280; line-height: 1.5;">
+                                📞 +57 (1) 234-5678
+                            </p>
+                            <p style="margin: 8px 0; color: #6b7280; line-height: 1.5;">
+                                🕒 Lun - Vie: 8:00 AM - 6:00 PM
+                            </p>
+                            <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #e5e7eb;">
+                                <p style="margin: 0; color: #1f2937; font-size: 14px; font-weight: 500;">
+                                    30+ años construyendo el futuro de Colombia
+                                </p>
+                            </div>
+                        </div>
+                    `,
+                    maxWidth: 350
+                });
+
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+
+                // Abrir info window por defecto
+                setTimeout(() => {
+                    infoWindow.open(map, marker);
+                }, 1000);
+
+                // Animación de rotación suave
+                let heading = 90;
+                const rotateMap = () => {
+                    if (is3D && map) {
+                        heading += 0.3;
+                        if (heading >= 360) heading = 0;
+                        map.setHeading(heading);
+                    }
+                };
+
+                setInterval(rotateMap, 300);
+                is3D = true; // Activar 3D por defecto
+
+            } catch (error) {
+                console.error('Error initializing Google Maps:', error);
+                // Mostrar mensaje de error en el contenedor del mapa
+                const mapContainer = document.getElementById('map');
+                if (mapContainer) {
+                    mapContainer.innerHTML = `
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; text-align: center; padding: 2rem;">
+                            <div>
+                                <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.7;"></i>
+                                <h3 style="margin-bottom: 1rem;">Mapa no disponible</h3>
+                                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Para ver el mapa interactivo, configura tu API key de Google Maps</p>
+                                <a href="https://maps.google.com/maps?q=Chía,+Cundinamarca,+Colombia" target="_blank" 
+                                   style="background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; display: inline-block; backdrop-filter: blur(10px);">
+                                    <i class="fas fa-external-link-alt"></i> Ver en Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Fallback si Google Maps no carga
+        window.gm_authFailure = function() {
+            console.log('Google Maps authentication failed');
+            const mapContainer = document.getElementById('map');
+            if (mapContainer) {
+                mapContainer.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; text-align: center; padding: 2rem;">
+                        <div>
+                            <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.7;"></i>
+                            <h3 style="margin-bottom: 1rem;">Mapa Interactivo</h3>
+                            <p style="margin-bottom: 1.5rem; opacity: 0.9;">Nos encontramos en Chía, Cundinamarca, Colombia</p>
+                            <a href="https://maps.google.com/maps?q=Chía,+Cundinamarca,+Colombia" target="_blank" 
+                               style="background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; display: inline-block; backdrop-filter: blur(10px);">
+                                <i class="fas fa-external-link-alt"></i> Ver Ubicación en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+        };
+
+        // Función para centrar el mapa
+        function centerMap() {
+            const etcsaLocation = { lat: 4.8584, lng: -74.0542 };
+            map.panTo(etcsaLocation);
+            map.setZoom(17);
+            
+            // Animación del marcador
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            setTimeout(() => {
+                marker.setAnimation(null);
+            }, 2000);
+        }
+
+        // Función para alternar vista 3D
+        function toggle3D() {
+            is3D = !is3D;
+            const button = event.target.closest('.map-btn');
+            
+            if (is3D) {
+                map.setTilt(45);
+                map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+                button.innerHTML = '<i class="fas fa-map"></i> Vista Normal';
+                button.style.background = 'linear-gradient(45deg, #f59e0b, #d97706)';
+            } else {
+                map.setTilt(0);
+                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+                button.innerHTML = '<i class="fas fa-cube"></i> Vista 3D';
+                button.style.background = 'linear-gradient(135deg, #1e40af, #3b82f6, #10b981)';
+            }
+
+            // Animación suave de transición
+            setTimeout(() => {
+                centerMap();
+            }, 300);
+        }
+
+        // Función para obtener direcciones
+        function getDirections() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const etcsaCoords = "4.8584,-74.0542";
+            const etcsaAddress = "Chía, Cundinamarca, Colombia";
+
+            // Detectar dispositivo móvil
+            if (/android/i.test(userAgent)) {
+                // Android - Google Maps app
+                window.open(`https://maps.google.com/maps?daddr=${etcsaCoords}&mode=driving`, '_blank');
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // iOS - Apple Maps o Google Maps
+                const appleConfirm = confirm("¿Abrir en Apple Maps? (Cancelar para Google Maps)");
+                if (appleConfirm) {
+                    window.open(`maps://maps.google.com/maps?daddr=${etcsaCoords}&mode=driving`, '_blank');
+                } else {
+                    window.open(`https://maps.google.com/maps?daddr=${etcsaCoords}&mode=driving`, '_blank');
+                }
+            } else {
+                // Desktop - Google Maps web
+                window.open(`https://maps.google.com/maps?daddr=${encodeURIComponent(etcsaAddress)}&mode=driving`, '_blank');
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Update scroll indicator
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrollPercent / 100})`;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Mensaje Enviado';
+                submitBtn.style.background = 'var(--accent-color)';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = 'var(--gradient)';
+                    this.reset();
+                }, 2000);
+            }, 2000);
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenu.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Counter animation for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent.replace(/[0-9]+/, target);
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = counter.textContent.replace(/[0-9]+/, Math.floor(current));
+                    }
+                }, 16);
+            });
+        }
+
+        // Trigger counter animation when stats come into view
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.achievements');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating-card');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Portfolio card interactions
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Enhanced mobile responsiveness
+        function handleResize() {
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // Adjust mobile-specific behaviors
+                document.querySelectorAll('.floating-card').forEach(card => {
+                    card.style.animation = 'none';
+                });
+            } else {
+                // Re-enable animations on desktop
+                document.querySelectorAll('.floating-card').forEach(card => {
+                    card.style.animation = '';
+                });
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Initial call
+
+        // Add scroll-to-top functionality
+        const scrollToTop = document.createElement('div');
+        scrollToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollToTop.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        `;
+
+        document.body.appendChild(scrollToTop);
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                scrollToTop.style.opacity = '1';
+                scrollToTop.style.visibility = 'visible';
+            } else {
+                scrollToTop.style.opacity = '0';
+                scrollToTop.style.visibility = 'hidden';
+            }
+        });
+
+        scrollToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Map intersection observer para activar animaciones
+        const mapObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Activar animaciones del mapa cuando sea visible
+                    setTimeout(() => {
+                        if (marker) {
+                            marker.setAnimation(google.maps.Animation.DROP);
+                            setTimeout(() => {
+                                marker.setAnimation(null);
+                            }, 1500);
+                        }
+                    }, 500);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        // Observar la sección del mapa
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapSection = document.querySelector('.map-section');
+            if (mapSection) {
+                mapObserver.observe(mapSection);
+            }
+        });
+    </script>
+</body>
+</html>
